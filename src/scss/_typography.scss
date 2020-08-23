@@ -1,0 +1,51 @@
+// Allows the use of Monserrat font
+@font-face {
+  font-family: 'Monserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Monserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Monserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Monserrat';
+  src: url('../assets/Fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+// Allows the use of Fira Sans font
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/Fonts/Fira_Sans/FiraSans-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/Fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/Fonts/Fira_Sans/FiraSans-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/Fonts/Fira_Sans/FiraSans-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+}
