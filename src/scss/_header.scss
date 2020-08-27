@@ -34,6 +34,7 @@ a[nav-button]{
   background-color: white;
   margin-left: 0;
   transition: all 0.2s;
+  cursor: pointer;
   &:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     background-color: rgba($w-blue,  .02);
