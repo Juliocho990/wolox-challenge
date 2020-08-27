@@ -1,0 +1,33 @@
+@import '../scss/variables';
+@import '../scss/mixins';
+@import '../scss/header';
+@import '../scss/technologies';
+@import '../scss/woloxers';
+@import '../scss/benefits';
+@import '../scss/requirements';
+@import '../scss/footer';
+
+#divider {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-color: rgba($w-background, 0.3);
+  background-color: rgba($w-background, 0.4);;
+  box-shadow: 0px 2px 5px $w-background, 0px -2px 5px $w-background;
+}
+
+
+@include phone {
+  header, .technologies, .benefits {
+    padding: 5px;
+  }
+}
+@include tab-port {
+  header, .technologies, .benefits {
+    padding: 12.5px;
+  }
+}
+@include tab-land {
+  header, .technologies, .benefits {
+    padding: 20px;
+  }
+}

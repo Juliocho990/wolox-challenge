@@ -1,0 +1,26 @@
+/* Breakpoints associated with mediaQuery definitions 
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px+: Big desktop
+*/
+@mixin phone {
+  @media screen  and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin tab-port {
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    @content;
+  }
+}
+@mixin tab-land {
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin big-desktop {
+  @media screen and (min-width: $xl-min-width) {
+    @content;
+  }
+}
