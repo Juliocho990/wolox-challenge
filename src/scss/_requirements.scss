@@ -1,0 +1,23 @@
+.requirements {
+  min-height: 300px;
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  ul li{
+    list-style: none;
+    padding-left: 2rem;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+  }
+  #req1 {
+    background-image: url('/assets/Ic_Bullet_1.svg');
+  }
+  #req2 {
+    background-image: url('/assets/Ic_Bullet_2.svg');
+  }
+  #req3 {
+    background-image: url('/assets/Ic_Bullet_3.svg');
+  }
+}

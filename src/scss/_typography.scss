@@ -23,6 +23,18 @@
   font-style: normal;
   font-weight: bold;
 }
+@font-face {
+  font-family: 'Monserrat Medium';
+  src: url('../assets/Fonts/Montserrat/Montserrat-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Monserrat Black';
+  src: url('../assets/Fonts/Montserrat/Montserrat-Black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
 
 // Allows the use of Fira Sans font
 @font-face {
@@ -48,4 +60,43 @@
   src: url('../assets/Fonts/Fira_Sans/FiraSans-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: bold;
+}
+
+
+body {
+  font-family: "Monserrat";
+  font-style: normal;
+  font-weight: normal;
+  width: 100%;
+  color: $w-text-color;
+}
+
+// Normal font classes
+.fn {
+  font-family: "Monserrat";
+  font-weight: normal;
+  &-l {
+    font-weight: 300;
+  }
+  &-s {
+    font-weight: 600;
+  }
+  &-b {
+    font-weight: 700;
+  }
+}
+
+// Medium font classes
+.fm {
+  font-family: "Monserrat Medium";
+  font-weight: normal;
+}
+// Medium font classes
+.fb {
+  font-family: "Monserrat Black";
+  font-weight: normal;
+}
+
+h1,h2,h3{ 
+  font-weight: normal;
 }

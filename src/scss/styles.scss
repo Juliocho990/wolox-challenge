@@ -1,19 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
-@import 'typography';
-@import 'mixins';
+@import "variables";
+@import "mixins";
+@import "base";
+@import "typography";
 
-* {
-  box-sizing: border-box;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
+@import "content";
 
-body {
-  font-family: 'Monserrat';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-}
+
+
