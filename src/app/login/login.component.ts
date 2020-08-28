@@ -12,7 +12,9 @@ import { UserCredential } from '../user-credential';
 })
 export class LoginComponent implements OnInit {
 
+  
   loginForm: FormGroup;
+  
   public isSubmitted = false;
 
   constructor(private auth: AuthService, private router: Router, private formBuilder: FormBuilder) { }

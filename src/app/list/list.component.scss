@@ -1,0 +1,40 @@
+@import '../../scss/variables';
+.container {
+  background-image: url('/assets/Backgrounds/Bg_Header.png');
+  background-repeat: repeat-y;
+  min-height: 616px;
+  text-align: center;
+  
+  .title {
+    font-size: 200%;
+  }
+  .filter {
+    font-size: 103%;
+    margin: 1rem auto;
+    padding: .5em;
+    border-radius: 100px;
+    outline: none;
+  }
+  .logo {
+    max-height: 3rem;
+    max-width: 7rem;
+  }
+  .button-sort {
+    color: inherit;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-gap: 10px;
+    margin: 10px auto;
+    background-color: $w-background;
+    max-width: 64em;
+  }
+  .box {
+    border-radius: 5px;
+    padding: 10px;
+  }
+  #total {
+    font-size: 120%;
+  }
+}
