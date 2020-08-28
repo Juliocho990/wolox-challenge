@@ -1,0 +1,41 @@
+
+footer {
+  min-height: 550px;
+  background-image: url('/assets/Backgrounds/Bg_Footer.png');
+  background-size: cover;
+  background-position: top;
+  margin-bottom: 40px;
+  text-align: center;
+  .title {
+    font-size: 300%;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  .subtitle {
+    font-size: 220%;
+  }
+  a {
+    display: block;
+    margin-top: 4em;
+    border: none;
+    background-color: $w-blue;
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+    padding: .8rem 3em .8rem 3em;
+    border-radius: 100px;
+    transition: all 0.2s;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($w-blue,  .7);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    }
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="title fm">Lista de tecnologías</div>
+  <form [formGroup]="listForm" class="flex-row justify-around">
+    <div>
+      <div>
+        <input class="filter" formControlName="fname" type="text" placeholder="Filtrar">
+      </div>
+    </div>
+  </form>
+  <div class="wrapper flex-row justify-center">
+    <div class="box fm tech">Logo</div>
+    <div class="box fm tech">
+      <button class="button-sort" *ngIf="!desc" (click)="desc = !desc;  sortTechs()">&#9650;</button>
+      <button class="button-sort" *ngIf="desc" (click)="desc = !desc; sortTechs()">&#9660;</button>
+      Tecnología
+    </div>
+    <div class="box fm author">Autor</div>
+    <div class="box fm type">Tipo</div>
+    <div class="box fm year">Año</div>
+    <div class="box fm license">Licensia</div>
+    <div class="box fm language">Lenguaje</div>
+  </div>
+  <div class="wrapper flex-row justify-center" *ngFor="let tech of filteredTechs">
+    <div class="box tech">
+      <img class="logo" [src]="tech.logo" [alt]="tech">
+    </div>
+    <div class="box flex-row align-center justify-center">{{tech.tech}}</div>
+    <div class="box flex-row align-center justify-center">{{tech.author}}</div>
+    <div class="box flex-row align-center justify-center">{{tech.type}}</div>
+    <div class="box flex-row align-center justify-center">{{tech.year}}</div>
+    <div class="box flex-row align-center justify-center">{{tech.license}}</div>
+    <div class="box flex-row align-center justify-center">{{tech.language}}</div>
+  </div>
+  <div class="flex-row justify-center">
+    <span id="total" class="fm" color="gray">Total de tecnologías: {{filteredTechs?.length}}</span>
+  </div>
+</div>

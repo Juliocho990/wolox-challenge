@@ -1,0 +1,31 @@
+<div class="container flex-row justify-center align-center">
+  <div class="card">
+    <h2 class="title fm" color="blue">Iniciar sesión</h2>
+    <form [formGroup]="loginForm" class="login" (ngSubmit)="login()">
+      <p [ngClass]="{'error': isSubmitted && formControls.email.errors}">
+        <input id="email" type="email" placeholder="Correo" formControlName="email">
+      </p>
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <span class="msg-error" *ngIf="formControls.email.errors.required">Campo requerido</span>
+      </div>
+      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <span class="msg-error" *ngIf="formControls.email.errors.email">Correo inválido</span>
+      </div>
+
+      <p [ngClass]="{ 'error': isSubmitted && formControls.password.errors }">
+        <input id="password" type="password" placeholder="Contraseña" formControlName="password">
+      </p>
+      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <span class="msg-error" *ngIf="formControls.password.errors.required">Campo requerido</span>
+      </div>
+      <p>
+        <input id="submit" type="submit" value="Iniciar">
+      </p>
+      <div class="checkbox flex-row align-center justify-center">
+        <span id="checkbox-text">Conservar la sesión</span>
+        <input id="checkbox-input" type="checkbox" formControlName="keepSession">
+      </div>
+    </form>
+  </div>
+  <form action=""></form>
+</div>
