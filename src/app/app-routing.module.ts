@@ -23,7 +23,7 @@ const routes: Routes = [
     component: LoginComponent,
     canActivate: [NoAuthGuard]
   },
-  { 
+  {
     path: '**', redirectTo: '/list'
   },
   { path: '', redirectTo: '/list', pathMatch: 'full' },

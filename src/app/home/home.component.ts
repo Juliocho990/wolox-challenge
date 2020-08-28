@@ -12,9 +12,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   scroll(el: HTMLElement) {
-    el.scrollIntoView({behavior:"smooth"});
+    el.scrollIntoView({behavior: 'smooth'});
   }
 
 }
