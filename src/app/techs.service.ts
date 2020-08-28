@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 })
 export class TechsService {
 
-  readonly API_URL_ROOT = 'http://private-8e8921-woloxfrontendinverview.apiary-mock.com';
+  readonly API_URL_ROOT = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com';
 
   constructor(private http: HttpClient) { }
 

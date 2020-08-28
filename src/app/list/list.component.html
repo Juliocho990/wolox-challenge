@@ -1,9 +1,13 @@
 <div class="container">
+  <nav class="flex-row justify-end align-center">
+    <a class="fn-s" [routerLink]="['/home']" nav-item>Home</a>
+    <a class="fn-b" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" logout>Logout</a>
+  </nav>
   <div class="title fm">Lista de tecnologías</div>
   <form [formGroup]="listForm" class="flex-row justify-around">
     <div>
       <div>
-        <input class="filter" formControlName="fname" type="text" placeholder="Filtrar">
+        <input class="filter" formControlName="text2Filter" type="text" placeholder="Filtrar">
       </div>
     </div>
   </form>

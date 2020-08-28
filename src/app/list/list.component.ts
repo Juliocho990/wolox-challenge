@@ -4,6 +4,7 @@ import { Tech } from '../tech';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { debounceTime, tap, switchMap, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-list',
@@ -22,16 +23,17 @@ export class ListComponent implements OnInit {
 
   constructor(
     private techsService: TechsService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public auth: AuthService
   ) {
     this.listForm = this.formBuilder.group({
-      fname: ['', ],
+      text2Filter: ['', ],
     });
   }
 
   ngOnInit() {
     this.getTechs();
-    this.listForm.get('fname')
+    this.listForm.get('text2Filter')
       .valueChanges
       .pipe(
         debounceTime(300),
@@ -46,9 +48,9 @@ export class ListComponent implements OnInit {
 
   filterTechs() {
     return of(this.techs.filter((tech: Tech) => {
-      if (this.listForm.get('fname').value) {
-        return tech.type.toLowerCase().match(this.listForm.get('fname').value.toLowerCase()) ||
-          tech.tech.toLowerCase().match(this.listForm.get('fname').value.toLowerCase());
+      if (this.listForm.get('text2Filter').value) {
+        return tech.type.toLowerCase().match(this.listForm.get('text2Filter').value.toLowerCase()) ||
+          tech.tech.toLowerCase().match(this.listForm.get('text2Filter').value.toLowerCase());
       } else {
         return true;
       }
