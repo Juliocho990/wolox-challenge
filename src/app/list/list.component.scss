@@ -4,7 +4,12 @@
   background-repeat: repeat-y;
   min-height: 616px;
   text-align: center;
-  
+  nav {
+    margin: .5rem 3rem;
+    a[nav-item] {
+      margin: auto 2em;
+    }
+  }
   .title {
     font-size: 200%;
   }

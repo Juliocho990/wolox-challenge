@@ -20,30 +20,6 @@ nav > div > div {
   margin-right: 6em;
 }
 
-a[nav-item]{
-  color: inherit;
-  margin: auto 5px auto 5px;
-  cursor: pointer;
-}
-a[nav-button]{
-  color: $w-blue;
-  border: solid 1px;
-  border-radius: 100px;
-  padding: .5rem 4rem .5rem 4rem;
-  font-size: 14px;
-  background-color: white;
-  margin-left: 0;
-  transition: all 0.2s;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-    background-color: rgba($w-blue,  .02);
-  }
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2.5px 5px rgba(0, 0, 0, .2);
-  }
-}
 
 .inverted {
   transform: scaleX(-1);
