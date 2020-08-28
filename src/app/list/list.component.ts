@@ -18,15 +18,15 @@ export class ListComponent implements OnInit {
 
   filteredTechs: Tech[];
 
-  desc: boolean = true;
+  desc = true;
 
   constructor(
     private techsService: TechsService,
     private formBuilder: FormBuilder
   ) {
     this.listForm = this.formBuilder.group({
-      fname: ['',],
-    })
+      fname: ['', ],
+    });
   }
 
   ngOnInit() {
@@ -67,9 +67,9 @@ export class ListComponent implements OnInit {
 
 
   ascendingFilter = (a: Tech, b: Tech) => {
-    if(a.tech.toLowerCase() > b.tech.toLowerCase()) {
+    if (a.tech.toLowerCase() > b.tech.toLowerCase()) {
       return -1;
-    } 
+    }
     if (a.tech.toLowerCase() < b.tech.toLowerCase()) {
       return 1;
     }
@@ -77,7 +77,7 @@ export class ListComponent implements OnInit {
   }
 
   descendingFilter = (a: Tech, b: Tech) => {
-    if(a.tech.toLowerCase() < b.tech.toLowerCase()) {
+    if (a.tech.toLowerCase() < b.tech.toLowerCase()) {
       return -1;
     }
     if (a.tech.toLowerCase() > b.tech.toLowerCase()) {
@@ -92,7 +92,7 @@ export class ListComponent implements OnInit {
         this.techs = techs;
         this.filteredTechs = techs;
         this.sortTechs();
-      })
+      });
   }
 
 }

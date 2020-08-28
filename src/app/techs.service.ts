@@ -18,6 +18,6 @@ export class TechsService {
       .pipe(
         tap(_ => console.log('fetched techs')),
         catchError(err => of([]))
-      )
+      );
   }
 }

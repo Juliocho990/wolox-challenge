@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 import { UserCredential } from '../user-credential';
@@ -12,9 +12,8 @@ import { UserCredential } from '../user-credential';
 })
 export class LoginComponent implements OnInit {
 
-  
   loginForm: FormGroup;
-  
+
   public isSubmitted = false;
 
   constructor(private auth: AuthService, private router: Router, private formBuilder: FormBuilder) { }
@@ -24,20 +23,20 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       keepSession: [false]
-    })
+    });
   }
 
   login() {
     this.isSubmitted = true;
-    if(this.loginForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     }
     if (this.loginForm.get('keepSession').value) {
       if (confirm('¿Deseas conservar los datos de sesión?')) {
-        this.auth.login(<UserCredential>this.loginForm.value);
-      } 
+        this.auth.login(this.loginForm.value as UserCredential);
+      }
     } else {
-      this.auth.login(<UserCredential>this.loginForm.value);
+      this.auth.login(this.loginForm.value as UserCredential);
     }
   }
 

@@ -12,7 +12,7 @@ export class AuthService {
 
   public errors: any = [];
 
-  public isLogged: boolean = false;
+  public isLogged = false;
 
   public userCredential: UserCredential = {
     email: '',
@@ -49,7 +49,7 @@ export class AuthService {
       err => {
         this.errors = err['error'];
       }
-    )
+    );
   }
 
   public logout() {
