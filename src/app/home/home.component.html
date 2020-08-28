@@ -10,7 +10,7 @@
         <a class="fn-s" (click)="scroll(benefits)" nav-item>Beneficios</a>
         <a class="fn-s" (click)="scroll(requirements)" nav-item>Requerimientos</a>
         <a class="fn-b" [routerLink]="['/login']" nav-button *ngIf="!auth.isAuthenticated()">Login</a>
-        <a class="fn-b" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Logout</a>
+        <a class="fn-b" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" logout>Logout</a>
       </div>
     </div>
   </nav>
@@ -129,11 +129,11 @@
   <div flex="50" >
     <span class="title flex-row justify-center">Requerimientos</span>
   </div>
-  <div flex="50">
+  <div flex="50" class="reqs">
     <ul>
-      <li id="req1">Estudiantes avanzados o recibidos de carreras del rubro informático, sistemas o electrónicos</li>
-      <li id="req2">Inglés intermedio/avanzado</li>
-      <li id="req3">Conocimiento en metodologías ágiles(deseable)</li>
+      <li class="reqs-1">Estudiantes avanzados o recibidos de carreras del rubro informático, sistemas o electrónicos</li>
+      <li class="reqs-2">Inglés intermedio/avanzado</li>
+      <li class="reqs-3">Conocimiento en metodologías ágiles(deseable)</li>
     </ul>
   </div>
 </div>

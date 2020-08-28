@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  readonly API_URL_ROOT = 'http://private-8e8921-woloxfrontendinverview.apiary-mock.com';
+  readonly API_URL_ROOT = 'https://private-8e8921-woloxfrontendinverview.apiary-mock.com';
 
   public errors: any = [];
 
@@ -56,7 +56,7 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
     this.isLogged = false;
-    this.router.navigate['home'];
+    this.router.navigate(['home']);
   }
 
 }
