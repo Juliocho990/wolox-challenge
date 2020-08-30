@@ -13,7 +13,7 @@ describe('ListComponent', () => {
   let fixture: ComponentFixture<ListComponent>;
   let text2FilterInput: HTMLInputElement;
 
-  beforeEach(async() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [
         ReactiveFormsModule,
@@ -24,7 +24,7 @@ describe('ListComponent', () => {
       declarations: [ ListComponent ],
       providers: [
         {
-          provide: TechsService, 
+          provide: TechsService,
           useValue: {
             getTechs: () => of(TECHS_DESC)
           }
@@ -70,15 +70,41 @@ describe('ListComponent', () => {
   });
   it('should have \'text2Filter\' as empty string', () => {
     fixture = TestBed.createComponent(ListComponent);
-    text2FilterInput = fixture.debugElement.nativeElement.querySelector('.filter');
+    component.ngOnInit();
+    fixture.detectChanges();
+    text2FilterInput = fixture.debugElement.nativeElement.querySelector('.filter-form__item');
     fixture.detectChanges();
     expect(text2FilterInput.value).toEqual('');
   });
   it('should update \'text2Filter\' input model', () => {
     fixture = TestBed.createComponent(ListComponent);
-    text2FilterInput = fixture.debugElement.nativeElement.querySelector('.filter');
+    component.ngOnInit();
+    fixture.detectChanges();
+    text2FilterInput = fixture.debugElement.nativeElement.querySelector('.filter-form__item');
     text2FilterInput.value = 'A';
     text2FilterInput.dispatchEvent(new Event('input'));
     expect(text2FilterInput.value).toEqual('A');
+  });
+  it('should filter by \'text2Filter\' input model', () => {
+    fixture = TestBed.createComponent(ListComponent);
+    fixture.detectChanges();
+    text2FilterInput = fixture.debugElement.nativeElement.querySelector('.filter-form__item');
+    text2FilterInput.value = 'A';
+    text2FilterInput.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.filteredTechs).toBe(TECHS_FILTERED_BY_A);
+    });
+  });
+  it('should filter by \'text2Filter\' input model', () => {
+    fixture = TestBed.createComponent(ListComponent);
+    fixture.detectChanges();
+    text2FilterInput = fixture.debugElement.nativeElement.querySelector('.filter-form__item');
+    text2FilterInput.value = 'L';
+    text2FilterInput.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(component.filteredTechs).toBe(TECHS_FILTERED_BY_L);
+    });
   });
 });

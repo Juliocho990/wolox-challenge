@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserCredential } from '../user-credential';
 import { Router } from '@angular/router';
+import { Token } from '../token';
+import { Error } from '../error';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +38,9 @@ export class AuthService {
       this.API_URL_ROOT + '/login',
       JSON.stringify(userCredential)
     ).subscribe (
-      data => {
+      (data: Token) => {
         if (userCredential.keepSession) {
-          localStorage.setItem('token', data['token']);
+          localStorage.setItem('token', data.token);
           localStorage.setItem('email', userCredential.email);
         } else {
           this.isLogged = true;
@@ -46,8 +48,8 @@ export class AuthService {
         }
         this.router.navigate(['list']);
       },
-      err => {
-        this.errors = err['error'];
+      (err: Error) => {
+        this.errors = err.error;
       }
     );
   }

@@ -1,0 +1,18 @@
+p {
+  font-size: 180%;
+}
+
+.stack {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.techs {
+  max-width: 80vw;
+}
+
+@media screen and (max-width: 530px) {
+  .techs {
+    min-height: 180px;
+  }
+}
