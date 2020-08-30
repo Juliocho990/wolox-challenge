@@ -1,41 +1,39 @@
 <div class="container">
-  <nav class="flex-row justify-end align-center">
-    <a class="fn-s" [routerLink]="['/home']" nav-item>Home</a>
-    <a class="fn-b" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" logout>Logout</a>
+  <nav class="main-nav flex-row justify-end align-center">
+    <a class="main-nav__link main-font main-font__semi" [routerLink]="['/home']" nav-item>Home</a>
+    <a class="main-nav__link main-font main-font__bold" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" logout>Logout</a>
   </nav>
-  <div class="title fm">Lista de tecnologías</div>
-  <form [formGroup]="listForm" class="flex-row justify-around">
-    <div>
-      <div>
-        <input class="filter" formControlName="text2Filter" type="text" placeholder="Filtrar">
-      </div>
-    </div>
+  <div class="title main-font main-font__semi">Lista de tecnologías</div>
+  <form [formGroup]="listForm" class="filter-form flex-row justify-around">
+    <p>
+      <input class="filter-form__item" formControlName="text2Filter" type="text" placeholder="Filtrar">
+    </p>
   </form>
-  <div class="wrapper flex-row justify-center">
-    <div class="box fm tech">Logo</div>
-    <div class="box fm tech">
-      <button class="button-sort" *ngIf="!desc" (click)="desc = !desc;  sortTechs()">&#9650;</button>
-      <button class="button-sort" *ngIf="desc" (click)="desc = !desc; sortTechs()">&#9660;</button>
-      Tecnología
+  <div class="list flex-row justify-center">
+    <div class="list__item main-font main-font__semi tech">Logo</div>
+    <div class="list__item main-font main-font__semi tech">
+      <button class="list__item--button-sort" *ngIf="!desc" (click)="desc = !desc;  sortTechs()">&#9650;</button>
+      <button class="list__item--button-sort" *ngIf="desc" (click)="desc = !desc; sortTechs()">&#9660;</button>
+      <span>Tecnología</span>
     </div>
-    <div class="box fm author">Autor</div>
-    <div class="box fm type">Tipo</div>
-    <div class="box fm year">Año</div>
-    <div class="box fm license">Licensia</div>
-    <div class="box fm language">Lenguaje</div>
+    <div class="list__item main-font main-font__semi">Autor</div>
+    <div class="list__item main-font main-font__semi">Tipo</div>
+    <div class="list__item main-font main-font__semi">Año</div>
+    <div class="list__item main-font main-font__semi">Licensia</div>
+    <div class="list__item main-font main-font__semi">Lenguaje</div>
   </div>
-  <div class="wrapper flex-row justify-center" *ngFor="let tech of filteredTechs">
-    <div class="box tech">
-      <img class="logo" [src]="tech.logo" [alt]="tech">
+  <div class="list flex-row justify-center" *ngFor="let tech of filteredTechs">
+    <div class="list__item tech">
+      <img class="list__item--logo" [src]="tech.logo" [alt]="tech">
     </div>
-    <div class="box flex-row align-center justify-center">{{tech.tech}}</div>
-    <div class="box flex-row align-center justify-center">{{tech.author}}</div>
-    <div class="box flex-row align-center justify-center">{{tech.type}}</div>
-    <div class="box flex-row align-center justify-center">{{tech.year}}</div>
-    <div class="box flex-row align-center justify-center">{{tech.license}}</div>
-    <div class="box flex-row align-center justify-center">{{tech.language}}</div>
+    <div class="list__item flex-row align-center justify-center">{{tech.tech}}</div>
+    <div class="list__item flex-row align-center justify-center">{{tech.author}}</div>
+    <div class="list__item flex-row align-center justify-center">{{tech.type}}</div>
+    <div class="list__item flex-row align-center justify-center">{{tech.year}}</div>
+    <div class="list__item flex-row align-center justify-center">{{tech.license}}</div>
+    <div class="list__item flex-row align-center justify-center">{{tech.language}}</div>
   </div>
   <div class="flex-row justify-center">
-    <span id="total" class="fm" color="gray">Total de tecnologías: {{filteredTechs?.length}}</span>
+    <span class="total" class="main-font main-font__semi" color="gray">Total de tecnologías: {{filteredTechs?.length}}</span>
   </div>
 </div>

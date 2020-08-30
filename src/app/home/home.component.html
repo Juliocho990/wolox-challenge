@@ -1,153 +1,45 @@
-<header>
-  <nav>
-    <div class="flex-row justify-between">
-      <div class="flex-row align-center">
-        <img id="logo" class="self-end" src="assets/logo_full_color.svg" alt="Logo" class="logo">
+<header class="main-header">
+  <nav class="main-nav">
+    <div class="main-nav__list flex-row justify-between">
+      <div class="main-nav__item flex-row align-center">
+        <img class="main-nav__logo self-end" src="assets/logo_full_color.svg" alt="Logo">
       </div>
-      <div class="flex-row align-center justify-around">
-        <a class="fn-s" (click)="scroll(home)" nav-item>Inicio</a>
-        <a class="fn-s" (click)="scroll(technologies)" nav-item>Tecnologías</a>
-        <a class="fn-s" (click)="scroll(benefits)" nav-item>Beneficios</a>
-        <a class="fn-s" (click)="scroll(requirements)" nav-item>Requerimientos</a>
-        <a class="fn-b" [routerLink]="['/login']" nav-button *ngIf="!auth.isAuthenticated()">Login</a>
-        <a class="fn-b" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" logout>Logout</a>
+      <div class="main-nav__item flex-row align-center justify-around">
+        <a class="main-nav__link main-font main-font__semi" (click)="scroll(start)" nav-item>Inicio</a>
+        <a class="main-nav__link main-font main-font__semi" (click)="scroll(technologies)" nav-item>Tecnologías</a>
+        <a class="main-nav__link main-font main-font__semi" (click)="scroll(benefits)" nav-item>Beneficios</a>
+        <a class="main-nav__link main-font main-font__semi" (click)="scroll(requirements)" nav-item>Requerimientos</a>
+        <a class="main-nav__link main-font main-font__bold" [routerLink]="['/login']" nav-button *ngIf="!auth.isAuthenticated()">Login</a>
+        <a class="main-nav__link main-font main-font__bold" nav-button *ngIf="auth.isAuthenticated()" (click)="auth.logout()" logout>Logout</a>
       </div>
     </div>
   </nav>
-  <div #home class="home flex-row align-center">
-    <div flex="50">
-      <h1>
-        Bienvenido a tu
-        <br/>
-        <span class="fn fn-b">Entrevista Técnica </span> en
-        <br/>
-        <span class="fn fn-b" color="green">Wolox</span>
-      </h1>
-    </div>
-    <div flex="50" class="inverted" >
-      <img id="hero" src="assets/Img Hero/Ic_ilustra_Hero.png" alt="hero image">
-    </div>
+  <div #start>
+    <app-start ></app-start>
   </div>
 </header>
-<div #technologies class="technologies flex-row align-center">
-  <div flex="50">
-    <p class="fm">
-      Estamos buscando
-      <br/>
-      para incorporar gente
-      <br/>
-      increíble para estas
-      <br/>
-      tecnologías:
-    </p>
-  </div>
-  <div flex="50" class="flex-row justify-center">
-    <img id="techs" src="assets/Ic_Technologies.svg" alt="technologies">
-  </div>
+<div #technologies>
+  <app-technologies></app-technologies>
 </div>
-<div #woloxers class="woloxers flex-row">
-  <div class="box1 flex-row align-center justify-center" flex="60">
-    <div class="content fn-b">
-      <span color="green">350 + <span color="blue">Woloxers</span></span>
-      <div class="header flex-row align-center justify-center">
-        <img src="assets/ic_twitter.png" alt="Twitter logo">
-        <h3 class="fn">@Wolox</h3>
-      </div>
-      <div class="flex-row align-center justify-center">
-        <a href="https://twitter.com/Wolox" target="_blank" class="fn fn-b">Siguenos</a>
-      </div>
-    </div>
-  </div>
-  <div class="box2 flex-row align-center justify-center" flex="40">
-    <p align="center">
-      Trabajamos para <br>
-      <span color="blue"><b>convertir </b></span>
-      <span color="green"><b>ideas</b></span> en<br>
-      productos.
-    </p>
-  </div>
-</div>
-<div #benefits class="benefits">
-  <div class="title flex-row justify-center align-center">
-    <span>
-      Entre los benefinicios que ofrecemos se enceuntra <span color="blue">;)</span>
-    </span>
-  </div>
-  <div class="items flex-row align-center justify-between">
-    <div class="item">
-      <div class="item-image flex-row align-end justify-around">
-        <img src="assets/Ic_Hour.svg" alt="Hour">
-      </div>
-      <div class="item-text flex-row justify-center">
-        <span align="center">Flexibilidad <br/>horaria</span>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-image  flex-row align-end justify-around">
-        <img src="assets/Ic_HomeOffice.svg" alt="Home Office">
-      </div>
-      <div class="item-text  flex-row justify-center">
-        <span align="center">Home office</span>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-image  flex-row align-end justify-around">
-        <img src="assets/Ic_Workshops.svg" alt="Workshops">
-      </div>
-      <div class="item-text  flex-row justify-center">
-        <span align="center">Capacitationes <br/>y workshops</span>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-image  flex-row align-end justify-around">
-        <img src="assets/Ic_DrinkSnacks.svg" alt="Drink Snacks">
-      </div>
-      <div class="item-text  flex-row justify-center">
-        <span align="center">Snacks, frutas <br/> y bebidas gratis</span>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-image  flex-row align-end justify-around">
-        <img src="assets/Ic_laptop.svg" alt="Laptop">
-      </div>
-      <div class="item-text  flex-row justify-center">
-        <span align="center">Semana <br/>remota</span>
-      </div>
-    </div>
-    <div class="item">
-      <div class="item-image  flex-row align-end justify-around">
-        <img src="assets/Ic_brain.svg" alt="Brain">
-      </div>
-      <div class="item-text  flex-row justify-center">
-        <span align="center">Trabajar <br/>en últimas <br/>tecnologías</span>
-      </div>
-    </div>
-  </div>
+<div #woloxers>
+  <app-woloxers></app-woloxers>
+</div> 
+<div #benefits>
+  <app-benefits></app-benefits>
 </div>
 <hr id="divider">
-<div #requirements class="requirements flex-row justify-center align-center">
-  <div flex="50" >
-    <span class="title flex-row justify-center">Requerimientos</span>
-  </div>
-  <div flex="50" class="reqs">
-    <ul>
-      <li class="reqs-1">Estudiantes avanzados o recibidos de carreras del rubro informático, sistemas o electrónicos</li>
-      <li class="reqs-2">Inglés intermedio/avanzado</li>
-      <li class="reqs-3">Conocimiento en metodologías ágiles(deseable)</li>
-    </ul>
-  </div>
+<div #requirements>
+  <app-requirements></app-requirements>
 </div>
-<footer class="flex-column align-center">
+<footer class="main-footer stack stack--vertical flex-column align-center">
   <div flex="70" class="flex-column justify-center">
     <div class="title self-align-center">
       <span>Gracias por <span color="blue">completar el ejercicio</span></span>
     </div>
     <div class="subtitle self-align-center">
-      Te invitamos a ver más información
+      <span>Te invitamos a ver más información</span>
     </div>
-    <div class="self-align-center">
-      <a href="https://www.wolox.com.ar" target="_blank">Conocer más</a>
-    </div>
+    <a class="button self-align-center"href="https://www.wolox.com.ar" target="_blank">Conocer más</a>
   </div>
   <div flex="30" class="flex-row align-end">
     <img src="/assets/Ic_Wolox_Footer.svg" alt="logo footer">

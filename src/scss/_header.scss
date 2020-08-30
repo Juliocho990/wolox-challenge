@@ -1,60 +1,7 @@
-@import 'mixins';
-
-header {
+.main-header {
   padding: 30px;
   background-image: url('/assets/Backgrounds/Bg_Header.png');
-  background-size: cover;
+  background-size: contain;
   background-position: top;
 }
 
-nav, .home {
-  padding-bottom: 40px;
-}
-
-nav > div > div {
-  padding-bottom: 20px;
-}
-
-#logo {
-  height: 28px;
-  margin-right: 6em;
-}
-
-
-.inverted {
-  transform: scaleX(-1);
-  text-align: center;
-}
-
-#hero {
-  animation: moveFromOutside 1s ease-out;
-  max-width: 80vw;
-}
-
-h1 {
-  animation-name: moveFromOutside;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-}
-
-@media screen and (max-width: 520px) {
-  #hero {
-    min-height: 180px;
-  }
-}
-
-
-
-@keyframes moveFromOutside {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  80%{
-    transform: translateX(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}

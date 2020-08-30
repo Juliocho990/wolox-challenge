@@ -1,0 +1,39 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+
+.inverted {
+  transform: scaleX(-1);
+  text-align: center;
+}
+
+.hero {
+  animation: moveFromOutside 1s ease-out;
+  max-width: 80vw;
+}
+
+.main-title {
+  animation-name: moveFromOutside;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@media screen and (max-width: 520px) {
+  .hero {
+    min-height: 180px;
+  }
+}
+
+@keyframes moveFromOutside {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80%{
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,31 +1,32 @@
 <div class="container flex-row justify-center align-center">
   <div class="card">
-    <h2 class="title fm" color="blue">Iniciar sesión</h2>
-    <form [formGroup]="loginForm" class="login" (ngSubmit)="login()">
-      <p [ngClass]="{'error': isSubmitted && formControls.email.errors}">
-        <input id="email" type="email" placeholder="Correo" formControlName="email">
-      </p>
-      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-        <span class="msg-error" *ngIf="formControls.email.errors.required">Campo requerido</span>
-      </div>
-      <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-        <span class="msg-error" *ngIf="formControls.email.errors.email">Correo inválido</span>
-      </div>
-
-      <p [ngClass]="{ 'error': isSubmitted && formControls.password.errors }">
-        <input id="password" type="password" placeholder="Contraseña" formControlName="password">
-      </p>
-      <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
-        <span class="msg-error" *ngIf="formControls.password.errors.required">Campo requerido</span>
-      </div>
-      <p>
-        <input id="submit" type="submit" value="Iniciar">
-      </p>
-      <div class="checkbox flex-row align-center justify-center">
-        <span id="checkbox-text">Conservar la sesión</span>
-        <input id="checkbox-input" type="checkbox" formControlName="keepSession">
-      </div>
-    </form>
+    <h2 class="card__title title fm" color="blue">Iniciar sesión</h2>
+    <div class="card__body">
+      <form [formGroup]="loginForm" class="login-form" (ngSubmit)="login()">
+        <p [ngClass]="{'error': isSubmitted && formControls.email.errors}">
+          <input class="login-form__item--email" type="email" placeholder="Correo" formControlName="email">
+        </p>
+        <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+          <span class="login-form__msg-error" *ngIf="formControls.email.errors.required">Campo requerido</span>
+        </div>
+        <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+          <span class="login-form__msg-error" *ngIf="formControls.email.errors.email">Correo inválido</span>
+        </div>
+  
+        <p [ngClass]="{ 'error': isSubmitted && formControls.password.errors }">
+          <input class="login-form__item--password" type="password" placeholder="Contraseña" formControlName="password">
+        </p>
+        <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+          <span class="login-form__msg-error" *ngIf="formControls.password.errors.required">Campo requerido</span>
+        </div>
+        <p>
+          <input class="login-form__submit" type="submit" value="Iniciar">
+        </p>
+        <div class="login-form__item--checkbox flex-row align-center justify-center">
+          <span class="login-form__item--checkbox__text">Conservar la sesión</span>
+          <input class="login-form__item--checkbox__input" type="checkbox" formControlName="keepSession">
+        </div>
+      </form>
+    </div>
   </div>
-  <form action=""></form>
 </div>

@@ -1,45 +1,48 @@
 @import '../../scss/variables';
+@import '../../scss/nav';
 .container {
   background-image: url('/assets/Backgrounds/Bg_Header.png');
   background-repeat: repeat-y;
   min-height: 616px;
   text-align: center;
-  nav {
+  .main-nav {
     margin: .5rem 3rem;
-    a[nav-item] {
+    &__link[nav-item] {
       margin: auto 2em;
     }
   }
   .title {
     font-size: 200%;
   }
-  .filter {
-    font-size: 103%;
-    margin: 1rem auto;
-    padding: .5em;
-    border-radius: 100px;
-    outline: none;
+  .filter-form {
+    &__item {
+      font-size: 103%;
+      margin: 1rem auto;
+      padding: .5em;
+      border-radius: 100px;
+      outline: none;
+    }
   }
-  .logo {
-    max-height: 3rem;
-    max-width: 7rem;
-  }
-  .button-sort {
-    color: inherit;
-  }
-  .wrapper {
+  .list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     grid-gap: 10px;
     margin: 10px auto;
     background-color: $w-background;
     max-width: 64em;
+    &__item {
+      border-radius: 5px;
+      padding: 10px;
+      &--button-sort {
+        color: inherit;
+      }
+      &--logo{
+        max-height: 3rem;
+        max-width: 7rem;
+      }
+    }
   }
-  .box {
-    border-radius: 5px;
-    padding: 10px;
-  }
-  #total {
+  .total {
     font-size: 120%;
   }
 }

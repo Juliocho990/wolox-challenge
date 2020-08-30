@@ -1,0 +1,29 @@
+.stack {
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  & > div:nth-child(2) {
+    margin: auto 2rem;
+  }
+  .list {
+    &__item {
+      list-style: none;
+      padding-left: 2rem;
+      background-position: 0 50%;
+      background-repeat: no-repeat;
+      margin-bottom: 40px;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+    & > li:nth-child(1) {
+      background-image: url('/assets/Ic_Bullet_1.svg');
+    }
+    & > li:nth-child(2) {
+      background-image: url('/assets/Ic_Bullet_2.svg');
+    }
+    & > li:nth-child(3) {
+      background-image: url('/assets/Ic_Bullet_3.svg');
+    }
+  }
+}

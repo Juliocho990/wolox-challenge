@@ -9,12 +9,23 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { StartComponent } from './landing/start/start.component';
+import { TechnologiesComponent } from './landing/technologies/technologies.component';
+import { WoloxersComponent } from './landing/woloxers/woloxers.component';
+import { BenefitsComponent } from './landing/benefits/benefits.component';
+import { RequirementsComponent } from './landing/requirements/requirements.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
     ListComponent,
+    TechnologiesComponent,
+    StartComponent,
+    WoloxersComponent,
+    BenefitsComponent,
+    RequirementsComponent
   ],
   imports: [
     BrowserModule,
