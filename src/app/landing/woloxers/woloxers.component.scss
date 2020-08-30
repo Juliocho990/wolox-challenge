@@ -1,0 +1,53 @@
+@import '../../../scss/variables';
+
+.stack--horizontal {
+  min-height: 522px;
+  &__item {
+    height: inherit;
+  }
+  & > div:nth-child(1) {
+    color: white;
+    background-image: url('/assets/img_woloxer.png');
+    background-size: cover;
+    background-position: bottom;
+  }
+  & > div:nth-child(2) {
+    background-color: $w-background;
+    min-height: 50px;
+    p {
+      font-size: 215%;
+      padding: 20px;
+    }
+  }
+  .twitter {
+    &__intro {
+      font-size: 307%;
+    }
+    &__header{
+      margin-top: 2em;
+    }
+    &__link {
+      color: inherit;
+      font-family: inherit;
+      background: none;
+      font-size: 18px;
+      padding: .5em 4em .5em 4em;
+      margin-top: 1rem;
+      border-radius: 100px;
+      border: solid 2px $w-blue;
+      transition: all 0.2s;
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($w-blue,  .2);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, .2);
+      }
+      &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(255, 255, 255, .2);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

@@ -5,19 +5,22 @@
     padding: 0;
     box-sizing: inherit;
 }
+
 *[color="green"] {
   color: $w-green;
 }
+
 *[color="blue"] {
   color: $w-blue;
 }
+
 *[color="gray"] {
   color: $w-gray;
 }
+
 *[color="red"] {
   color: $w-red;
 }
-
 
 html {
     // This defines what 1rem is (h4 24px)
@@ -40,45 +43,16 @@ a {
   color: inherit;
 }
 
-a[nav-item]{
-  margin: auto 5px auto 5px;
-  cursor: pointer;
-  padding: .5em .5em;
-  &:hover {
-    border-radius: 100px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .12);
-    background-color: rgba($w-blue, .02);
+.stack {
+  margin: 0;
+  &--horizontal {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 500px;
   }
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2.5px 5px rgba(0, 0, 0, .12);
-  }
-}
-
-a[nav-button]{
-  color: $w-blue;
-  border: solid 1px;
-  border-radius: 100px;
-  padding: .5rem 4rem .5rem 4rem;
-  font-size: 14px;
-  background-color: white;
-  margin-left: 0;
-  transition: all 0.2s;
-  cursor: pointer;
-  &[logout] {
-    color: $w-red;
-  } 
-  &:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-    background-color: rgba($w-blue,  .02);
-  }
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2.5px 5px rgba(0, 0, 0, .2);
-  }
-  &:hover, &:active {
-    &[logout] {
-      background-color: rgba($w-red,  .02);
-    } 
+  &--vertical {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 400px;
   }
 }

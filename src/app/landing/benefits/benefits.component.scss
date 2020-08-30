@@ -1,0 +1,25 @@
+.stack {
+  .title {
+    font-size: 180%;
+    min-height: 200px;
+    text-align: center;
+  }
+  .list {
+    &__item {
+      width: 200px;
+      height: 220px;
+      &--image {
+        height: 100px;
+        width: 100%;
+      }
+      &--text{
+        margin-top: 30px;
+      }
+    }
+  }
+  .list {
+    @media screen and (max-width: 530px) {
+      justify-content: center;
+    }
+  }
+}

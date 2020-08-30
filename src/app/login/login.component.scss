@@ -10,59 +10,61 @@
   min-width: 300px;
   min-height: 300px;
   text-align: center;
-}
-.title {
-  margin-bottom: 30px;
-}
-form {
-  p {
-    margin: 10px auto;
+  &__title {
+    margin-bottom: 30px;
   }
-  #password, #email {
-    text-align: center;
-    font-size: 100%;
-    min-width: 15rem;
-    border-radius: 100px;
-    min-height: 2em;
-    outline: none;
-    border-color: $w-blue;
-  }
-  .error #email, .error #password {
-    border-color: orangered;
-  }
-  .msg-error {
-    color: orangered;
-    font-size: 80%;
-  }
-  #checkbox {
-    &-text {
-      font-size: 80%;
+  &__body {
+    .login-form {
+      & > p {
+        margin: 10px auto;
+      }
+      &__item {
+        &--email, &--password {
+          text-align: center;
+          font-size: 100%;
+          min-width: 15rem;
+          border-radius: 100px;
+          min-height: 2em;
+          outline: none;
+          border-color: $w-blue;
+          .error {
+            border-color: orangered;
+          }
+        }
+        &--checkbox{
+          &__text {
+            font-size: 80%;
+          }
+          &__input {
+            margin-left: 1em;
+          }
+        }
+      }
+      &__msg-error {
+        color: orangered;
+        font-size: 80%;
+      }
+      &__submit {
+        font-size: 80%;
+        border: none;
+        border-radius: 100px;
+        min-height: 3em;
+        min-width: 10rem;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        color: white;
+        background-color: $w-blue;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+          background-color: rgba($w-blue,  .8);
+        }
+        &:active {
+          transform: translateY(-1px);
+          box-shadow: 0 2.5px 5px rgba(0, 0, 0, .2);
+        }
+      }
     }
-    &-input {
-      margin-left: 1em;
-    }
   }
-  #submit {
-    font-size: 80%;
-    border: none;
-    border-radius: 100px;
-    min-height: 3em;
-    min-width: 10rem;
-    font-weight: bold;
-    letter-spacing: 0.1em;
-    color: white;
-    background-color: $w-blue;
-    outline: none;
-    cursor: pointer;
-    &:hover {
-      box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-      background-color: rgba($w-blue,  .8);
-    }
-    &:active {
-      transform: translateY(-1px);
-      box-shadow: 0 2.5px 5px rgba(0, 0, 0, .2);
-    }
-
-  }
-
 }
